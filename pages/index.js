@@ -1,11 +1,33 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import {useState, useEffect} from 'react'
+import { API } from 'aws-amplify'
+import { listTodos } from '../src/graphql/queries'
 
 export default function Home() {
+  const [todos, setTodos] = useState([])
+ 
+  useEffect(() => {
+fetchPosts()
+  },[])
+
+  async function fetchPosts() {
+    const postData = await API.graphql({
+      query: listTodos
+    })
+    setTodos(postData.data.listTodos.items)
+  }
+
   return (
-    <div className="text-3xl font-bold underline">
-       hello world 
+    <div>
+       <h1 className="text-3xl font-bold underline">
+      my post 
+    </h1>
+
+   
+    {todos.map((todo) => (
+      <p key={todo.id}>{todo.content}</p>
+    ))}
+    
     </div>
+   
   )
 }
