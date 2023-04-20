@@ -24,7 +24,7 @@ fetchPosts()
 
    
     {todos.map((todo) => (
-      <p key={todo.id}>{todo.content}</p>
+      <p key={todo.id}>{todo.title}</p>
     ))}
     
     </div>
