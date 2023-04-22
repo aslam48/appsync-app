@@ -29,12 +29,15 @@ const [showChild, setShowChild] = useState(false);
   }
   if (typeof window === "undefined") {
     return <>
-      <Navbar/>
+      
     </>;
   } else {
-    return  <div className='py-8 px-16 bg-slate-100'>
-     <Component {...pageProps} />;
+    return <>
+      <Navbar/>
+      <div className='py-8 px-16 bg-slate-100'>
+     <Component {...pageProps} />
      </div>
+    </> 
   }
 }
 export default MyApp

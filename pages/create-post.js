@@ -2,7 +2,7 @@ import {useState, useRef, React} from 'react'
 import { API } from 'aws-amplify'
 import { useRouter } from 'next/router'
 import {v4 as uuid} from 'uuid'
-import { createTodo } from '../src/graphql/mutations'
+import { updateTodo } from '../src/graphql/mutations'
 import dynamic from 'next/dynamic'
 const SimpleMDE = dynamic(() => import("react-simplemde-editor"),{
     srr: false
@@ -28,9 +28,10 @@ async function createNewPost() {
     post.id = id
 
     await API.graphql({
-        query: createTodo,
+        query: updateTodo,
         variables: {input: post},
-        authMode: "AMAZON_COGNITO_USER_POOLS",
+        // authMode: "AMAZON_COGNITO_USER_POOLS",
+        
     })
     // router.push(`/post/${id}`)
 }
@@ -40,7 +41,7 @@ return (
         <h1 className='text-3xl font-semibold tracking-wide mt-6 '>Create new post</h1>
 
         <input onChange={onChange} 
-        namme="title"
+        name="title"
         placeholder='title'
         value={post.title}
         className='border-b pb-2 text-lg my-4 focus:outline-none w-full font-light text-gray-500 placeholder-gray-500 y-2'

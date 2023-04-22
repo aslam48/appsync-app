@@ -19,5 +19,23 @@
         "appsync38332d0e": {}
       }
     }
+  },
+  "aslam": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-appsync-aslam-145210-authRole",
+      "UnauthRoleArn": "arn:aws:iam::964656100752:role/amplify-appsync-aslam-145210-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::964656100752:role/amplify-appsync-aslam-145210-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-appsync-aslam-145210-deployment",
+      "UnauthRoleName": "amplify-appsync-aslam-145210-unauthRole",
+      "StackName": "amplify-appsync-aslam-145210",
+      "StackId": "arn:aws:cloudformation:us-east-1:964656100752:stack/amplify-appsync-aslam-145210/e63e46f0-e114-11ed-b133-0eaeb97704dd",
+      "AmplifyAppId": "d1b05mra7g2ohz"
+    },
+    "categories": {
+      "auth": {
+        "appsync38332d0e": {}
+      }
+    }
   }
 }
